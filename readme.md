@@ -8,6 +8,12 @@ Backup all the Databases for a given user and keeps the backup for 30 days.
 - Create a folder called `DATA` next to those files
 - Setup Cronjob
 
-```
+```sh
 /usr/local/bin/bash /path/to/backup-mysql.sh $host $user $pw
+
+# report nothing
+/usr/local/bin/bash /path/to/backup-mysql.sh $host $user $pw >/dev/null 2>&1
+
+# report only errors
+/usr/local/bin/bash /path/to/backup-mysql.sh $host $user $pw > /dev/null
 ```
