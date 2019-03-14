@@ -8,16 +8,16 @@ SCRIPT_FILE="$0"
 SCRIPT_PATH=`dirname "$SCRIPT_FILE"`
 
 #######################################################################
-# The directory to Save the files in
-#######################################################################
-SAVE_DIR="$SCRIPT_PATH/DATA"
-
-#######################################################################
 # credentials for the mysql
 #######################################################################
 MYSQLHOST="${1:-'localhost'}"
 MYSQLUSER="${2:-'root'}"
 MYSQLPASS="${3:-''}"
+
+#######################################################################
+# The directory to Save the files in
+#######################################################################
+SAVE_DIR="${4:-$SCRIPT_PATH/DATA/database}"
 
 #######################################################################
 # how long to keep the backups
@@ -40,7 +40,7 @@ if [ ! -f "$LIB" ]; then echo "The mysql lib is missing (Search: $LIB)"; exit; f
 . "$LIB"
 
 # Backup the db
-backupDB $MYSQLHOST $MYSQLUSER $MYSQLPASS $SAVE_DIR/database $LOG "database"
+backupDB $MYSQLHOST $MYSQLUSER $MYSQLPASS $SAVE_DIR $LOG "database"
 
 # delete old files
 delExpiredFiles $SAVE_DIR/database $KEEP_FILES_FOR $LOG # 30 days old
