@@ -43,4 +43,4 @@ if [ ! -f "$LIB" ]; then echo "The mysql lib is missing (Search: $LIB)"; exit; f
 backupDB $MYSQLHOST $MYSQLUSER $MYSQLPASS $SAVE_DIR $LOG "database"
 
 # delete old files
-delExpiredFiles $SAVE_DIR/database $KEEP_FILES_FOR $LOG # 30 days old
+delExpiredFiles $SAVE_DIR $KEEP_FILES_FOR $LOG # 30 days old
