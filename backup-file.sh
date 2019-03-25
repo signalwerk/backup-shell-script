@@ -10,7 +10,7 @@ SCRIPT_PATH=`dirname "$SCRIPT_FILE"`
 #######################################################################
 # The directory to Backup
 #######################################################################
-BACKUP_DIR="$SCRIPT_PATH/DATA"
+BACKUP_DIR="$SCRIPT_PATH/data"
 
 #######################################################################
 # The directory to Save the files in
@@ -37,4 +37,4 @@ if [ ! -f "$LIB" ]; then echo "The general lib is missing (Search: $LIB)"; exit;
 backupFiles $BACKUP_DIR $SAVE_DIR $LOG "clientname"
 
 # delete old files
-delExpiredFiles $SAVE_DIR/data $KEEP_FILES_FOR $LOG # 30 days old
+delExpiredFiles $SAVE_DIR $KEEP_FILES_FOR $LOG # 30 days old
