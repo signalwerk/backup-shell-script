@@ -4,13 +4,24 @@
 ## Setup for Database backup
 Backup all the Databases for a given user and keeps the backup for 30 days.
 
-- Copy `backup-mysql.sh` `lib-mysql.sh` `lib-general.sh` to the place you want your backups
+- Install `backup-mysql.sh` `lib-mysql.sh` `lib-general.sh` to the place you want your backups
 - Create a folder called `DATA` next to those files
-- Setup Cronjob (Example: `0 11,16,23 * * *`)
+- Run Cronjob (Example: `0 11,16,23 * * *`)
+
+### Install
+```bash
+curl https://raw.githubusercontent.com/signalwerk/backup-shell-script/master/backup-mysql.sh > backup-mysql.sh
+curl https://raw.githubusercontent.com/signalwerk/backup-shell-script/master/lib-mysql.sh > lib-mysql.sh
+curl https://raw.githubusercontent.com/signalwerk/backup-shell-script/master/lib-general.sh > lib-general.sh
+```
+### Run
+Parameters
+* `$host` = MySQL Uost (required)
+* `$user` = MySQL User (required)
+* `$pw` = MySQL Password (required)
+* `$savepath` = save-path (optional)
 
 ```bash
-# $savepath = optional save-path
-
 /usr/local/bin/bash /path/to/backup-mysql.sh $host $user $pw $savepath
 
 # report nothing
