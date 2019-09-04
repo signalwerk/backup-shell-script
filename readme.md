@@ -13,6 +13,7 @@ Backup all the Databases for a given user and keeps the backup for 30 days.
 curl https://raw.githubusercontent.com/signalwerk/backup-shell-script/master/backup-mysql.sh > backup-mysql.sh
 curl https://raw.githubusercontent.com/signalwerk/backup-shell-script/master/lib-mysql.sh > lib-mysql.sh
 curl https://raw.githubusercontent.com/signalwerk/backup-shell-script/master/lib-general.sh > lib-general.sh
+mkdir DATA
 ```
 ### Run
 Parameters
